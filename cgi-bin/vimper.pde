@@ -1,5 +1,3 @@
-PShader toon;
-
 float base_rotation = PI/4;
 float arm1_rot = PI/2;
 float arm2_rot = PI/6;
