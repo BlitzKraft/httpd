@@ -7,18 +7,26 @@
 	<title>Persona v0.1b</title>
 	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/slider.js"></script>
+	<style type="text/css" id="myBGstyle">
+	</style>
+	<script language="javascript">
+	function changeColor(newValue) {
+	var newColor = newValue;
+        // set the html content of the label showing the current radius value
+        $("#currentValue").html(newColor);
+        // set the style with the new radius value
+        $("#myBGstyle").html(
+	"#bg { background-color: rgb(" + String(newColor) + ","  + String(newColor) + "," + String(newColor) + "); }"
+	);
+	}
+	</script>
 </head>
-<body>
+<body id="bg" >
 <!-- <canvas id="persona" width="600" height="600"></canvas> -->	
 <canvas data-processing-sources="vimper.pde"></canvas>
 <div>
-	<input id="slider1" type="hidden" />
-	<input id="slider2" type="hidden" />
-	<input id="slider3" type="hidden" />
-	<input id="slider4" type="hidden" />
-	<input id="slider5" type="hidden" />
-	<input id="slider6" type="hidden" />
+	<input id="sl1" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+	<p class="note">Current value: <span id="currentValue">50</span></p>
 </div>
 <script src="vimper.pde">
 
