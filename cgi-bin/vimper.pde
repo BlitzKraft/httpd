@@ -21,7 +21,7 @@ float rotx, roty;
 float protx, proty;
 
 void setup() {
-  size(600,600, OPENGL);
+  size(900,600, OPENGL);
   background(0);
   lights();
   camera(700.0, 350.0, 500.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
@@ -34,7 +34,7 @@ void draw() {
   //shader(toon);
   fill(#3BD3FF);
   //stroke(#3BD3FF);
-  
+
   //This is a single tree of primitives. All transformations apply to any figure
   //drawn from then on. 
   //stroke(0);
@@ -48,7 +48,7 @@ void draw() {
   background(0);
   //rotateY(-PI/2);
   //rotateX(-PI/2);
-  
+
   rotate(-base_rotation);
     base();
     rotateY(PI - arm2_rot);
@@ -60,7 +60,7 @@ void draw() {
         translate(arm2, off, 0);
         rotateY(-PI/4 + arm2_rot-arm1_rot);
         endEff();
-}  
+}
 
 //TODO: Cone is created independent of the order of s1 and s2
 //Fixes the problem of extra face being created when r1 > r2
@@ -76,7 +76,7 @@ void cylinder(int sides, float s1, float s2, float h) {
     vertex(0, x, y);
   }
   endShape();
-  
+
   beginShape();
   for (int i = 0; i < sides; i++) {
     float x = cos(radians(i * angle)) * r2 * scroll/100;

@@ -10,25 +10,26 @@
 	<style type="text/css" id="myBGstyle">
 	</style>
 	<script language="javascript">
-	function changeColor(newValue) {
-	var newColor = newValue;
-        // set the html content of the label showing the current radius value
-        $("#currentValue").html(newColor);
-        // set the style with the new radius value
-        $("#myBGstyle").html(
-	"#bg { background-color: rgb(" + String(newColor) + ","  + String(newColor) + "," + String(newColor) + "); }"
-	);
-	}
+	
 	</script>
 </head>
 <body id="bg" >
-<!-- <canvas id="persona" width="600" height="600"></canvas> -->	
-<canvas data-processing-sources="vimper.pde"></canvas>
-<div>
+<div class="canvas">
+<canvas id="sketch" data-processing-sources="vimper.pde"></canvas>
+</div>
+<div class="sliders-left">
 	<input id="sl1" type="range" min="0" max="255" onchange="changeColor(this.value)" />
 	<p class="note">Current value: <span id="currentValue">255</span></p>
+	<input id="sl2" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+	<p class="note">Current value: <span id="currentValue">255</span></p>
+	<input id="sl3" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+	<p class="note">Current value: <span id="currentValue">255</span></p>
+	<input id="sl4" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+	<p class="note">Current value: <span id="currentValue">255</span></p>
+	<input id="sl5" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+	<p class="note">Current value: <span id="currentValue">255</span></p>
 </div>
-<script src="vimper.pde">
+<!--script src="vimper.pde"-->
 
 </script>
 

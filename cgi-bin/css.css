@@ -1,3 +1,28 @@
 body {
+	width: 100%;
+	background-color: #BBBBBB;
+}
+
+.sliders-left {
+	align:left;
+	width: 200px;
+	padding: 30px;
+	margin: -200px 10px 0px 0px;
+	border-radius: 0 30px 30px 0;
+	background-color: #CDCDCD;
+	display: block;
+	z-index: 100;
+	position: absolute;
+	font: Sans, Sans Mono;
+	box-shadow: 10px 10px 20px #999;
+}
+
+#sketch {
+	display: block;
+	margin: 0 auto;
+}
+
+.canvas {
+	z-index: -1;
 	background-color: #000000;
 }
