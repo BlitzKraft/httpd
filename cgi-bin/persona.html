@@ -8,30 +8,45 @@
 	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
 	<style type="text/css" id="myBGstyle">
+		.canvas {
+			z-index: -1;
+		}
 	</style>
 	<script language="javascript">
-	
 	</script>
 </head>
-<body id="bg" >
-<div class="canvas">
-<canvas id="sketch" data-processing-sources="vimper.pde"></canvas>
-</div>
-<div class="sliders-left">
-	<input id="sl1" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-	<p class="note">Current value: <span id="currentValue">255</span></p>
-	<input id="sl2" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-	<p class="note">Current value: <span id="currentValue">255</span></p>
-	<input id="sl3" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-	<p class="note">Current value: <span id="currentValue">255</span></p>
-	<input id="sl4" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-	<p class="note">Current value: <span id="currentValue">255</span></p>
-	<input id="sl5" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-	<p class="note">Current value: <span id="currentValue">255</span></p>
-</div>
-<!--script src="vimper.pde"-->
-
-</script>
+<body>
+	<div class="header"><img src="Small-logo.png" style="height: 60px; width: auto;"></img></div>
+	<div class="canvas">
+		<canvas id="sketch" data-processing-sources="vimper.pde"></canvas>
+	</div>
+	<div class="pane" id="slidersleft">
+		<input id="closeleft" type="button" onclick='toggle_visibility("slidersleft")'/>
+		<!--squarefruit colors - blue: #00B0F0; red: #E02C2C; -->
+		<div class="sidehead">Motors</div>
+		<input class="slider" id="sl1" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">255</span></p>
+		<input class="slider" id="sl2" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">255</span></p>
+		<input class="slider" id="sl3" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">255</span></p>
+		<input class="slider" id="sl4" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">255</span></p>
+		<input class="slider" id="sl5" type="range" min="0" max="255" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">255</span></p>
+	</div>
 
 </body>
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+           var e = document.getElementById(id);
+          if(e.style.display == 'block')
+		e.style.display = 'none';
+	else
+		e.style.display = 'block';
+	}
+//-->
+</script>
 </html>

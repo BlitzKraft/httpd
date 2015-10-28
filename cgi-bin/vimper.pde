@@ -32,7 +32,9 @@ void setup() {
 
 void draw() {
   //shader(toon);
-  fill(#3BD3FF);
+  //fill(#3BD3FF);
+  stroke(#3BD3FF);
+  fill(0);
   //stroke(#3BD3FF);
 
   //This is a single tree of primitives. All transformations apply to any figure
@@ -45,7 +47,7 @@ void draw() {
   //float yrot = map(mouseY, 0, height, TWO_PI, 0);
   rotateY(roty);
   rotateX(rotx);
-  background(0);
+  background(#00B0F0);
   //rotateY(-PI/2);
   //rotateX(-PI/2);
 
