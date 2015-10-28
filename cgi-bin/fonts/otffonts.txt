@@ -1,0 +1,10 @@
+./hdad-segment14-1.002/Segment14.otf
+./gauge/Gauge-Heavy.otf
+./gauge/Gauge-Oblique.otf
+./gauge/Gauge-Regular.otf
+./cinzel-bold/Cinzel-Regular.otf
+./cinzel-bold/Cinzel-Bold.otf
+./cinzel-bold/CinzelDecorative-Black.otf
+./cinzel-bold/Cinzel-Black.otf
+./cinzel-bold/CinzelDecorative-Bold.otf
+./cinzel-bold/CinzelDecorative-Regular.otf

@@ -1,0 +1,57 @@
+//Background color
+@bgcolor: #00B0F0;
+
+//Pane Background
+@panecolor: #CDCDCD;
+
+//Font: Muli from Google fonts
+.font(@font) {
+	
+
+body {
+	width: 95%;
+	background-color: @bgcolor;
+	padding: 0;
+	margin: 0;
+	font: Century Gothic;
+}
+
+.pane {
+	text-align: left;
+	width: 200px;
+	padding: 10px 10px 10px 30px;
+	margin: -500px 0px 0px 0px;
+	border-radius: 0 30px 30px 0;
+	background-color: @panecolor;
+	display: block;
+	position: absolute;
+	font: Sans, Sans Mono;
+	opacity: 10%;
+	font: Century Gothic;
+}
+
+#sketch {
+	display: block;
+	margin: 0 auto;
+}
+
+.canvas {
+	z-index: -1;
+	background-color: @bgcolor;
+}
+
+#closeleft {
+	display: block;
+	width: 20px;
+	text-align: right;
+	margin: 10px 10px auto auto;
+}
+
+.sidehead {
+	text-align: left;
+	font-size: 18pt;
+}
+
+.slider {
+	padding: 0px;
+}
