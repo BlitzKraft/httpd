@@ -1,57 +1,134 @@
+//Let there be Dark!!
+///////////////////////////////
 //Background color
-@bgcolor: #00B0F0;
+@bg-color: #000000;
 
-//Pane Background
-@panecolor: #CDCDCD;
+///////////////////////////////
+//Pane settings
+@pane-color: #CDCDCD;
+@pane-bg: rgba(35,35,35, @pane-opacity);
+@pane-border-color: white;
+@pane-border-thickness: 1px;
+@pane-opacity: 0.7;
+@pane-width: 100%;
 
+///////////////////////////////
+//Slider settings
+//Track
+@sl-thickness: 1px;
+@sl-width: 80%;
+@sl-color: white;
+@sl-bg: @pane-color;
+// thumb
+@sl-th-width: 3px;
+@sl-th-size: 10px;
+
+
+///////////////////////////////
+//Font settings
 //Font: Muli from Google fonts
 .font(@font) {
-	
+	font-family: 'Century Gothic', sans-serif;
+	src: url('../fonts/Muli-regular/Muli-regular.eot');
+}	
 
 body {
 	width: 95%;
-	background-color: @bgcolor;
+	background-color: @bg-color;
 	padding: 0;
 	margin: 0;
-	font: Century Gothic;
+	font-family: 'Century Gothic', sans-serif;
+	src: url('../fonts/Muli-regular/Muli-regular.eot');
+	color: white;
+}
+
+body::focus {
+	border: none;
+}
+
+//Container - To create columns
+.container {
+	width: 15%;
+	min-width: 200px;
+	display: inline-block;
+	padding: 2px 0 auto 0;
+	vertical-align: top;
 }
 
 .pane {
 	text-align: left;
-	width: 200px;
-	padding: 10px 10px 10px 30px;
-	margin: -500px 0px 0px 0px;
-	border-radius: 0 30px 30px 0;
-	background-color: @panecolor;
-	display: block;
-	position: absolute;
-	font: Sans, Sans Mono;
-	opacity: 10%;
-	font: Century Gothic;
+	width: @pane-width;
+	min-width: 200px;
+	height: auto;
+	border-radius: 0 8px 0px 0;
+	border-style: solid;
+	border-color: @pane-border-color;
+	border-width: @pane-border-thickness @pane-border-thickness @pane-border-thickness 0;
+	background-color: @pane-bg;
+	display: inline-block;
+	position: relative;
+	margin: 0 0 10px 0;
 }
 
 #sketch {
-	display: block;
-	margin: 0 auto;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	position: relative;
 }
 
 .canvas {
-	z-index: -1;
-	background-color: @bgcolor;
+	background-color: @bg-color;
+	display: inline-block;
+}
+
+.canvas::focus {
+	border: none;
 }
 
 #closeleft {
 	display: block;
-	width: 20px;
-	text-align: right;
-	margin: 10px 10px auto auto;
+	width: 5px;
+	height: 10px;
+	margin: 5px 5px auto auto;
 }
 
 .sidehead {
 	text-align: left;
+	margin: 15px;
 	font-size: 18pt;
 }
 
 .slider {
-	padding: 0px;
+	padding: 3px;
 }
+
+.note {
+	padding: 0 0 0 10px;
+	margin: 0px 0 5px 0;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	height: 1px;
+	width: @sl-width;
+	margin: 1px;
+	background: none;
+}
+input[type=range]::focus {
+	outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+	height: @sl-thickness;
+	background: white;
+	border: 1px;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 1px solid #FFFFFF;
+	height: 11px;
+	width: 10px;
+	background: white;
+	margin-top: -5px;
+}
+

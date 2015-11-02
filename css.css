@@ -1,0 +1,43 @@
+body {
+  width: 95%;
+  background-color: #00b0f0;
+  padding: 0;
+  margin: 0;
+  font: Century Gothic;
+}
+.pane {
+  text-align: left;
+  width: 200px;
+  padding: 10px 10px 10px 30px;
+  margin: -500px 0px 0px 0px;
+  border-radius: 0 30px 0px 0;
+  border-color: #ffffff;
+  border: 2px;
+  background-color: #cdcdcd;
+  display: block;
+  position: absolute;
+  font: Sans, Sans Mono;
+  opacity: 10%;
+  font: Century Gothic;
+}
+#sketch {
+  display: block;
+  margin: 0 auto;
+}
+.canvas {
+  z-index: -1;
+  background-color: #00b0f0;
+}
+#closeleft {
+  display: block;
+  width: 20px;
+  text-align: right;
+  margin: 10px 10px auto auto;
+}
+.sidehead {
+  text-align: left;
+  font-size: 18pt;
+}
+.slider {
+  padding: 0px;
+}

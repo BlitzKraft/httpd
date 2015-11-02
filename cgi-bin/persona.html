@@ -4,36 +4,40 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css.css">
+	<link rel="icon" href="icon.png" type="image/png"/>
 	<title>Persona v0.1b</title>
 	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
-	<style type="text/css" id="myBGstyle">
-		.canvas {
-			z-index: -1;
-		}
-	</style>
-	<script language="javascript">
-	</script>
 </head>
 <body>
-	<div class="header"><img src="Small-logo.png" style="height: 60px; width: auto;"></img></div>
-	<div class="canvas">
-		<canvas id="sketch" data-processing-sources="vimper.pde"></canvas>
-	</div>
+	<div class="header" style="display: block;"><img src="SqrFrt.png" style="height: 60px; width: auto;"></img></div>
+	<div class="container">
 	<div class="pane" id="slidersleft">
 		<input id="closeleft" type="button" onclick='toggle_visibility("slidersleft")'/>
 		<!--squarefruit colors - blue: #00B0F0; red: #E02C2C; -->
 		<div class="sidehead">Motors</div>
-		<input class="slider" id="sl1" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-		<p class="note">Current value: <span id="currentValue">255</span></p>
-		<input class="slider" id="sl2" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-		<p class="note">Current value: <span id="currentValue">255</span></p>
-		<input class="slider" id="sl3" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-		<p class="note">Current value: <span id="currentValue">255</span></p>
-		<input class="slider" id="sl4" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-		<p class="note">Current value: <span id="currentValue">255</span></p>
-		<input class="slider" id="sl5" type="range" min="0" max="255" onchange="changeColor(this.value)" />
-		<p class="note">Current value: <span id="currentValue">255</span></p>
+		<input class="slider" id="sl1" type="range" min="0" max="180" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">180</span></p>
+		<input class="slider" id="sl2" type="range" min="0" max="180" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">180</span></p>
+		<input class="slider" id="sl3" type="range" min="0" max="180" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">180</span></p>
+		<input class="slider" id="sl4" type="range" min="0" max="180" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">180</span></p>
+		<input class="slider" id="sl5" type="range" min="0" max="180" onchange="changeColor(this.value)" />
+		<p class="note">Current value: <span id="currentValue">180</span></p>
+	</div>
+	<div id="xyz" class="pane">
+		<div class="sidehead">Control using Axes</div>
+		<input id="slix" class="slider" type="range" min="0" max="200" />
+		<p class="note">X: <span id="currentValue">200</span></p>
+		<input id="sliy" class="slider" type="range" min="0" max="200" />
+		<p class="note">Y: <span id="currentValue">200</span></p>
+		<input id="sliz" class="slider" type="range" min="0" max="200" />
+		<p class="note">Z: <span id="currentValue">200</span></p>
+	</div></div>
+	<div class="canvas">
+		<canvas id="sketch" data-processing-sources="vimper.pde"></canvas>
 	</div>
 
 </body>
@@ -42,10 +46,10 @@
 <!--
     function toggle_visibility(id) {
            var e = document.getElementById(id);
-          if(e.style.display == 'block')
+          if(e.style.display == 'inline-block')
 		e.style.display = 'none';
 	else
-		e.style.display = 'block';
+		e.style.display = 'inline-block';
 	}
 //-->
 </script>

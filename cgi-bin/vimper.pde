@@ -33,7 +33,8 @@ void setup() {
 void draw() {
   //shader(toon);
   //fill(#3BD3FF);
-  stroke(#3BD3FF);
+  stroke(#BBBBBB);
+  //stroke(#3BD3FF);
   fill(0);
   //stroke(#3BD3FF);
 
@@ -47,7 +48,8 @@ void draw() {
   //float yrot = map(mouseY, 0, height, TWO_PI, 0);
   rotateY(roty);
   rotateX(rotx);
-  background(#00B0F0);
+  background(#222222);
+  //background(#00B0F0);
   //rotateY(-PI/2);
   //rotateX(-PI/2);
 
