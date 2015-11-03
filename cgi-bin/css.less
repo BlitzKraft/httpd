@@ -2,12 +2,12 @@
 ///////////////////////////////
 //Background color
 @bg-color: #000000;
-
+@border-color: #FFFFFF;
 ///////////////////////////////
 //Pane settings
 @pane-color: #CDCDCD;
 @pane-bg: rgba(35,35,35, @pane-opacity);
-@pane-border-color: white;
+@pane-border-color: @border-color;
 @pane-border-thickness: 1px;
 @pane-opacity: 0.7;
 @pane-width: 100%;
@@ -22,11 +22,23 @@
 // thumb
 @sl-th-width: 3px;
 @sl-th-size: 10px;
+@sl-th-color: #FFFFFF;
 
 
 ///////////////////////////////
 //Font settings
 //Font: Muli from Google fonts
+//
+//TODO: Use relative sizing plus min-widths
+//TODO: Chamfer on Canvas
+//TODO: Tabs to the right of canvas
+//TODO: Tabs have chamfer too
+//TODO: Second tab shows live feed from camera
+//TODO: New pane for Navigation controls
+//TODO: Animations 
+//TODO:		Canvas slides down
+//TODO:		Panes slide from either side
+//TODO:		Footer
 .font(@font) {
 	font-family: 'Century Gothic', sans-serif;
 	src: url('../fonts/Muli-regular/Muli-regular.eot');
@@ -53,6 +65,8 @@ body::focus {
 	display: inline-block;
 	padding: 2px 0 auto 0;
 	vertical-align: top;
+	margin: 10px;
+	padding: 10px;
 }
 
 .pane {
@@ -60,30 +74,81 @@ body::focus {
 	width: @pane-width;
 	min-width: 200px;
 	height: auto;
-	border-radius: 0 8px 0px 0;
+	
+	//border-radius: 0 8px 0px 0;
 	border-style: solid;
 	border-color: @pane-border-color;
-	border-width: @pane-border-thickness @pane-border-thickness @pane-border-thickness 0;
+	border-width: @pane-border-thickness @pane-border-thickness @pane-border-thickness @pane-border-thickness; 
 	background-color: @pane-bg;
 	display: inline-block;
 	position: relative;
-	margin: 0 0 10px 0;
+	margin: 0 0 15px 0;
+}
+
+
+.chamfer::before, .chamfer::after  {
+	width: 20px;
+	height: 20px;
+	background: @bg-color;
+	content: '';
+	position: absolute;
+	transform: rotate(45deg);
+	display: inline-block;
+}
+
+.chamfer::before  {
+	top: -12px;
+	left: -12px;
+	box-shadow: 2px 0px 1px -1px white;
+}
+
+.chamfer::after  {
+	bottom: -12px;
+	right: -12px;
+	box-shadow: -2px 0px 1px -1px white;
 }
 
 #sketch {
 	border-style: solid;
 	border-width: 1px;
-	border-color: white;
+	border-color: @border-color;
 	position: relative;
 }
 
-.canvas {
-	background-color: @bg-color;
+canvas {
 	display: inline-block;
 }
 
-.canvas::focus {
+.can {
+	background-color: @bg-color;
+	display: inline-block;
+	padding: 0px;
+}
+
+.can::focus {
 	border: none;
+}
+
+.can::before, .can::after  {
+	width: 20px;
+	height: 20px;
+	background: @bg-color;
+	content: '';
+	position: relative;
+	transform: rotate(45deg);
+}
+
+.can::before  {
+	top: -12px;
+	left: -12px;
+	box-shadow: 2px 0px 1px -1px @border-color;
+}
+
+.can::after  {
+	background: red; //Remove this line later.
+	bottom: -12px;
+	right: -12px;
+	box-shadow: -2px 0px 1px -1px @border-color;
 }
 
 #closeleft {
@@ -108,6 +173,7 @@ body::focus {
 	margin: 0px 0 5px 0;
 }
 
+//For chrome/safari/webkit browsers
 input[type=range] {
 	-webkit-appearance: none;
 	height: 1px;
@@ -120,12 +186,36 @@ input[type=range]::focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
 	height: @sl-thickness;
-	background: white;
+	background: @sl-color;
 	border: 1px;
 }
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
-	border: 1px solid #FFFFFF;
+	border: 1px solid @sl-th-color;
+	height: 11px;
+	width: 10px;
+	background: white;
+	margin-top: -5px;
+}
+
+//For firefox 
+input[type=range] {
+	-webkit-appearance: none;
+	height: 1px;
+	width: @sl-width;
+	margin: 1px;
+	background: none;
+}
+input[type=range]::focus {
+	outline: none;
+}
+input[type=range]::-moz-range-track {
+	height: @sl-thickness;
+	background: white;
+	border: 1px;
+}
+input[type=range]::-moz-range-thumb {
+	border: 1px solid @sl-th-color;
 	height: 11px;
 	width: 10px;
 	background: white;
