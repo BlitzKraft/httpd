@@ -1,39 +1,36 @@
-//Let there be Dark!!
-///////////////////////////////
-//Background color
-@bg-color: #000000;
-@border-color: #FFFFFF;
-///////////////////////////////
+//Import from theme file
+//DONE: Theme files should contain only colors
+@import "dark.less";
+
+///////////Some size settings
+//Canvas
+@canvas-width: 62%;
+@canvas-height: 600px;
+
 //Pane settings
-@pane-color: #CDCDCD;
-@pane-bg: rgba(35,35,35, @pane-opacity);
-@pane-border-color: @border-color;
-@pane-border-thickness: 1px;
 @pane-opacity: 0.7;
 @pane-width: 100%;
+@pane-border-thickness: 1px;
 
-///////////////////////////////
-//Slider settings
-//Track
+//Column container
+@column-width: 15%;
+
+//Slider track
 @sl-thickness: 1px;
-@sl-width: 80%;
-@sl-color: white;
-@sl-bg: @pane-color;
-// thumb
+@sl-width: 95%;
+
+//Slider thumb
 @sl-th-width: 3px;
 @sl-th-size: 10px;
-@sl-th-color: #FFFFFF;
-
 
 ///////////////////////////////
 //Font settings
 //Font: Muli from Google fonts
 //
-//TODO: Use relative sizing plus min-widths
-//TODO: Chamfer on Canvas
-//TODO: Tabs to the right of canvas
-//TODO: Tabs have chamfer too
-//TODO: Second tab shows live feed from camera
+//DONE: Use relative sizing plus min-widths for Canvas
+//DONE: Theme files - read variables from other files
+//DONE: Buttons to the right of canvas
+//DONE: Second button shows live feed from camera
 //TODO: New pane for Navigation controls
 //TODO: Animations 
 //TODO:		Canvas slides down
@@ -47,11 +44,18 @@
 body {
 	width: 95%;
 	background-color: @bg-color;
-	padding: 0;
-	margin: 0;
+	margin-left: 20px;
+	margin-right: auto;
 	font-family: 'Century Gothic', sans-serif;
 	src: url('../fonts/Muli-regular/Muli-regular.eot');
 	color: white;
+}
+
+.header {
+	display: block;
+	text-align: left;
+	margin: 5px auto 5px -5px;
+	position: relative;
 }
 
 body::focus {
@@ -60,33 +64,34 @@ body::focus {
 
 //Container - To create columns
 .container {
-	width: 15%;
+	width: @column-width;
 	min-width: 200px;
 	display: inline-block;
-	padding: 2px 0 auto 0;
 	vertical-align: top;
-	margin: 10px;
-	padding: 10px;
+	margin: 5px;
+	padding: 5px;
 }
 
 .pane {
 	text-align: left;
-	width: @pane-width;
-	min-width: 200px;
+	width:90%; 
+	min-width: 180px;
 	height: auto;
-	
-	//border-radius: 0 8px 0px 0;
 	border-style: solid;
 	border-color: @pane-border-color;
-	border-width: @pane-border-thickness @pane-border-thickness @pane-border-thickness @pane-border-thickness; 
+	border-width: @pane-border-thickness; 
 	background-color: @pane-bg;
 	display: inline-block;
 	position: relative;
-	margin: 0 0 15px 0;
+	padding: 10px;
+	margin: 0 10px 15px 10px;
 }
 
+.pane:hover {
+	border-color: @pane-hover-border;
+}
 
-.chamfer::before, .chamfer::after  {
+.pane::before, .pane::after  {
 	width: 20px;
 	height: 20px;
 	background: @bg-color;
@@ -96,59 +101,44 @@ body::focus {
 	display: inline-block;
 }
 
-.chamfer::before  {
+.pane::before  {
 	top: -12px;
 	left: -12px;
-	box-shadow: 2px 0px 1px -1px white;
+	box-shadow: 2px 0px 1px -1px @pane-border-color;
 }
 
-.chamfer::after  {
+.pane::after  {
 	bottom: -12px;
 	right: -12px;
-	box-shadow: -2px 0px 1px -1px white;
+	box-shadow: -2px 0px 1px -1px @pane-border-color;
 }
+
+.pane:hover::before {
+	box-shadow: 2px 0px 1px -1px @pane-hover-border;
+}
+
+.pane:hover::after {
+	box-shadow: -2px 0px 1px -1px @pane-hover-border;
+}
+
 
 #sketch {
+	width:100%; 
+	min-width: 300px;
 	border-style: solid;
 	border-width: 1px;
-	border-color: @border-color;
+	border-color: @canvas-border; 
 	position: relative;
-}
-
-canvas {
-	display: inline-block;
+	margin: 5px 20px 5px 5px;
 }
 
 .can {
+	width: @canvas-width;
+	//height: @canvas-height;
+	height: auto;
 	background-color: @bg-color;
 	display: inline-block;
-	padding: 0px;
-}
-
-.can::focus {
-	border: none;
-}
-
-.can::before, .can::after  {
-	width: 20px;
-	height: 20px;
-	background: @bg-color;
-	content: '';
-	position: relative;
-	transform: rotate(45deg);
-}
-
-.can::before  {
-	top: -12px;
-	left: -12px;
-	box-shadow: 2px 0px 1px -1px @border-color;
-}
-
-.can::after  {
-	background: red; //Remove this line later.
-	bottom: -12px;
-	right: -12px;
-	box-shadow: -2px 0px 1px -1px @border-color;
+	margin: 5px 10px 5px 15px;
 }
 
 #closeleft {
@@ -173,6 +163,56 @@ canvas {
 	margin: 0px 0 5px 0;
 }
 
+.button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 90%;
+	height: 20px;
+	margin: 0 15px 15px 15px;
+	padding: 10px;
+	background-color: @pane-bg;
+	border-style: solid;
+	border-color: @pane-border-color;
+	border-width: @pane-border-thickness;
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+
+.button:hover {
+	border-color: @pane-hover-border;
+}
+
+.button::before, .button::after  {
+	width: 20px;
+	height: 20px;
+	background: @bg-color;
+	content: '';
+	position: absolute;
+	transform: rotate(45deg);
+	display: inline-block;
+}
+
+.button::before  {
+	top: -12px;
+	left: -12px;
+	box-shadow: 2px 0px 1px -1px @pane-border-color;
+}
+
+.button::after  {
+	bottom: -12px;
+	right: -12px;
+	box-shadow: -2px 0px 1px -1px @pane-border-color;
+}
+
+.button:hover::before {
+	box-shadow: 2px 0px 1px -1px @pane-hover-border;
+}
+
+.button:hover::after {
+	box-shadow: -2px 0px 1px -1px @pane-hover-border;
+}
 //For chrome/safari/webkit browsers
 input[type=range] {
 	-webkit-appearance: none;
