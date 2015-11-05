@@ -7,7 +7,9 @@
 	<link rel="icon" href="icon.png" type="image/png"/>
 	<title>Persona v0.1b</title>
 	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+	
 	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/funcs.js"></script>
 </head>
 <body>
 	<div class="header" style="display: block;"><img src="SqrFrt.png" style="height: 60px; width: auto;"></img></div>
@@ -39,6 +41,14 @@
 	<div class="can">
 		<canvas id="sketch" class="chamfer"  data-processing-sources="vimper.pde"></canvas>
 	</div>
+	<div class="container">
+		<div class="button"> Arm </div>
+		<div class="button">Video feed</div>
+		<div class="button">Upload file</div>
+		<div class="button">Persona</div>
+		<div class="button">Settings</div>
+		<div class="button">Advanced</div>
+	</div>
 
 </body>
 
@@ -50,7 +60,9 @@
 		e.style.display = 'none';
 	else
 		e.style.display = 'inline-block';
-	}
+	};
+	var pjs = Processing.getInstanceById("sketch");
+	pjs.setbg("#FF0000");	
 //-->
 </script>
 </html>
