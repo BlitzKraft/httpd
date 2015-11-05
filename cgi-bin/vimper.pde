@@ -20,9 +20,11 @@ float xOff, yOff;
 float rotx, roty;
 float protx, proty;
 
+color bgcolor;
+
 void setup() {
   size(900,600, OPENGL);
-  background(0);
+  background(#222222);
   lights();
   camera(700.0, 350.0, 500.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
   //Uncomment to remove edges
@@ -30,6 +32,11 @@ void setup() {
   //ortho();
 }
 
+void setbg(color col) {
+	//col = color(col);
+	background(col);
+	bgcolor =col;
+}
 void draw() {
   //shader(toon);
   //fill(#3BD3FF);
@@ -48,7 +55,7 @@ void draw() {
   //float yrot = map(mouseY, 0, height, TWO_PI, 0);
   rotateY(roty);
   rotateX(rotx);
-  background(#222222);
+  background(bgcolor);
   //background(#00B0F0);
   //rotateY(-PI/2);
   //rotateX(-PI/2);
