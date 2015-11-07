@@ -61,7 +61,7 @@ void draw() {
   //rotateX(-PI/2);
 
   rotate(-base_rotation);
-    base();
+    //base();
     rotateY(PI - arm2_rot);
     translate(0, baseoff, 0);
       arm_one();
