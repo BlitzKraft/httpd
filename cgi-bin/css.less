@@ -23,6 +23,7 @@
 @sl-th-width: 3px;
 @sl-th-size: 10px;
 
+
 ///////////////////////////////
 //Font settings
 //Font: Muli from Google fonts
@@ -32,9 +33,9 @@
 //DONE: Buttons to the right of canvas
 //DONE: Second button shows live feed from camera
 //TODO: New pane for Navigation controls
-//TODO: Animations 
-//TODO:		Canvas slides down
-//TODO:		Panes slide from either side
+//DONE: Animations 
+//DONE:		Canvas slides down
+//DONE:		Panes slide from either side
 //TODO:		Footer
 .font(@font) {
 	font-family: 'Century Gothic', sans-serif;
@@ -58,7 +59,7 @@ body {
 	position: relative;
 }
 
-body::focus {
+body:focus {
 	border: none;
 }
 
@@ -70,6 +71,16 @@ body::focus {
 	vertical-align: top;
 	margin: 5px;
 	padding: 5px;
+}
+
+.buttonlist {
+	width: @column-width;
+	min-width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+	padding: 5px;
+	top: 0px;
 }
 
 .pane {
@@ -267,3 +278,37 @@ input[type=range]::-moz-range-thumb {
 	margin-top: -5px;
 }
 
+
+//////Animations
+//Left
+@keyframes fromleft {
+	0%	{ margin: 0 10px 15px -300px;}
+	100%	{ margin: 0 10px 15px 10px;}
+}
+
+//Right
+@keyframes fromright {
+	delay: 3s;
+	0%	{margin: 0 15px 15px 300px;}
+	100%	{margin: 0 15px 15px 15px;}
+}
+
+@keyframes fromtop {
+	delay: 1s;
+	0%	{margin: -600px 10px 5px 15px;}
+	100%	{margin: 5px 10px 5px 15px;}
+}
+
+.button span{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
