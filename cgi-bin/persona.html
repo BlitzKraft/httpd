@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css.css">
+	<link rel="stylesheet" href="animate.css">
 	<link rel="icon" href="icon.png" type="image/png"/>
 	<title>Persona v0.1b</title>
 	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
@@ -11,10 +12,10 @@
 	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
 	<script language="javascript" type="text/javascript" src="js/funcs.js"></script>
 </head>
-<body>
+<body onload="init()">
 	<div class="header" style="display: block;"><img src="SqrFrt.png" style="height: 60px; width: auto;"></img></div>
 	<div class="container">
-	<div class="pane chamfer" id="slidersleft">
+	<div class="pane chamfer slideRight" id="slidersleft">
 		<input id="closeleft" type="button" onclick='toggle_visibility("slidersleft")'/>
 		<!--squarefruit colors - blue: #00B0F0; red: #E02C2C; -->
 		<div class="sidehead">Motors</div>
@@ -29,7 +30,7 @@
 		<input class="slider" id="sl5" type="range" min="0" max="180" onchange="changeColor(this.value)" />
 		<p class="note">Current value: <span id="currentValue">180</span></p>
 	</div>
-	<div id="xyz" class="pane chamfer">
+	<div id="xyz" class="pane chamfer slideRight">
 		<div class="sidehead">Control using Axes</div>
 		<input id="slix" class="slider" type="range" min="0" max="200" />
 		<p class="note">X: <span id="currentValue">200</span></p>
@@ -39,15 +40,15 @@
 		<p class="note">Z: <span id="currentValue">200</span></p>
 	</div></div>
 	<div class="can">
-		<canvas id="sketch" class="chamfer"  data-processing-sources="vimper.pde"></canvas>
+		<canvas id="sketch" class="chamfer slideDown"  data-processing-sources="vimper.pde"></canvas>
 	</div>
-	<div class="container">
-		<div class="button"> Arm </div>
-		<div class="button">Video feed</div>
-		<div class="button">Upload file</div>
-		<div class="button">Persona</div>
-		<div class="button">Settings</div>
-		<div class="button">Advanced</div>
+	<div class="buttonlist" id="tabs">
+		<div class="button slideLeft"><a href="#video" onclick="showTab()"><span></span>Video feed</a> </div>
+		<div class="button slideLeft"><a href="#upload" onclick="showTab()"><span></span>Uploadfile</a></div>
+		<div class="button slideLeft"><a href="#arm" onclick="showTab()"><span></span>Arm</a></div>
+		<div class="button slideLeft"><a href="#persona" onclick="showTab()"><span></span>Persona</a></div>
+		<div class="button slideLeft"><a href="#settings" onclick="showTab()"><span></span>Settings</a></div>
+		<div class="button slideLeft"><a href="#advanced" onclick="showTab()"><span></span>Advanced</a></div>
 	</div>
 
 </body>
