@@ -134,6 +134,9 @@ body:focus {
   margin: 5px 20px 5px 5px;
   background-color: white;
 }
+.tabContent.hide {
+  display: none;
+}
 .button:hover {
   border-color: #dddddd;
   background-color: #333;

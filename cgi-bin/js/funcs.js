@@ -16,8 +16,8 @@ var contentDivs = new Array();
 function init() {
 	var tabListItems = document.getElementById('tabs').childNodes;
 	for (var i = 0; i < tabListItems.length; i++) {
-		if (tabListItems[i].nodeName == "A") {
-			var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+		if (tabListItems[i].nodeName == "LI") {
+			var tabLink = getFirstChildWithTagName( tabListItems[i], "a" );
 			var id = getHash( tabLink.getAttribute('href'));
 			tabLinks[id] = tabLink;
 			contentDivs[id] = document.getElementById(id);
@@ -27,7 +27,7 @@ function init() {
 	var i = 0;
 
 	for ( var id in tabLinks) {
-		tabLinks[id].onclick = showTab;
+		tabLinks[id].onclick = showTab();
 		if (i == 0) tabLinks[id].className = 'selected';
 		i ++;
 	}
@@ -61,3 +61,8 @@ function getHash() {
 	return url.substring(hashPos + 1);
 }
 
+function getFirstChildWithTagName(element, tagName) {
+	for(var i = 0; i < element.childNodes.length; i++) {
+		if(element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+	}
+}
