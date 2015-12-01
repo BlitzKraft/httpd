@@ -8,10 +8,12 @@
 		<!--squarefruit colors - blue: #00B0F0; red: #E02C2C; -->
 		<div class="sidehead">Navigate</div>
 		<div class="navpad">
-			<img class="arrow up" src="img/whtarr.png" />
-			<img class="arrow lft" src="img/whtarr.png" />
-			<img class="arrow right" src="img/whtarr.png" />
-			<img class="arrow down" src="img/whtarr.png" />
+		<ul>
+			<li><img class="arrow up" src="img/whtarr.png" />   </li>
+			<li><img class="arrow lft" src="img/whtarr.png" />  <img class="arrow right" src="img/whtarr.png" /></li>
+			<li></li>
+			<li><img class="arrow down" src="img/whtarr.png" /> </li>
+		</ul>
 			<form action="script.php" method="get"><input type="submit" value="something" /></form>
 		</div>
 	</div>
