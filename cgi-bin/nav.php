@@ -9,10 +9,10 @@
 		<div class="sidehead">Navigate</div>
 		<div class="navpad">
 		<ul>
-			<li><img class="arrow up" src="img/whtarr.png" />   </li>
-			<li><img class="arrow lft" src="img/whtarr.png" />  <img class="arrow right" src="img/whtarr.png" /></li>
+			<li><img class="arrow uparr" src="img/whtarr.png" />   </li>
+			<li><img class="arrow lftarr" src="img/whtarr.png" />  <img class="arrow right" src="img/whtarr.png" /></li>
 			<li></li>
-			<li><img class="arrow down" src="img/whtarr.png" /> </li>
+			<li><img class="arrow downarr" src="img/whtarr.png" /> </li>
 		</ul>
 			<form action="script.php" method="get"><input type="submit" value="something" /></form>
 		</div>
