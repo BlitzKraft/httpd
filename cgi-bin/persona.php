@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/css.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="icon" href="img/icon.png" type="image/png"/>
-	<title>Persona v0.1b</title>
-	<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
-	
-	<script language="javascript" type="text/javascript" src="js/processing.min.js"></script>
-	<script language="javascript" type="text/javascript" src="js/funcs.js"></script>
-</head>
+	<?php include 'head.php' ?>
 <body onload="init()">
 	<div class="header" style="display: block;"><img src="img/SqrFrt.png" style="height: 60px; width: auto;"></img></div>
 	<div class="container">
