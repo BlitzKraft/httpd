@@ -219,19 +219,19 @@ input[type=range]::-moz-range-thumb {
   background: white;
   margin-top: -5px;
 }
-.navpad arrow {
+.navpad .arrow {
   height: 50px;
   width: 70px;
 }
-.navpad img rgt {
+.navpad .arrow .rgt {
   transform: rotate(0deg);
 }
-.navpad img down {
+.navpad .arrow .down {
   transform: rotate(90deg);
 }
-.navpad img lft {
+.navpad .arrow .lft {
   transform: rotate(180deg);
 }
-.navpad img up {
+.navpad .arrow .up {
   transform: rotate(270deg);
 }
