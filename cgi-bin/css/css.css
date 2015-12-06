@@ -221,9 +221,12 @@ input[type=range]::-moz-range-thumb {
 }
 .navpad ul li {
   display: inline-block;
+  text-align: center;
 }
 .navpad ul {
   display: block;
+  padding: 0 10px 0 10px;
+  text-align: center;
 }
 .navpad .arrow {
   height: 50px;
