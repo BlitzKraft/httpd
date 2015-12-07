@@ -10,7 +10,7 @@
 		<div class="navpad">
 		<ul>
 			<li><img class="arrow uparr" src="img/whtarr.png" />   </li>
-			<li><img class="arrow lftarr" src="img/whtarr.png" /><img style="height: 50px; width: 50px;"  src="img/stop.png" /><img class="arrow right" src="img/whtarr.png" /></li>
+			<li><img class="arrow lftarr" src="img/whtarr.png" /><img style="height: 50px; width: 50px; padding: 0 5px 0 5px"  src="img/stop.png" /><img class="arrow right" src="img/whtarr.png" /></li>
 			<li><img class="arrow downarr" src="img/whtarr.png" /> </li>
 			<li></li>
 		</ul>
