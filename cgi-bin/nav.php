@@ -19,7 +19,7 @@
 	</div>
 	</div>
 	<div class="can tabContent">
-		<img src="http://192.168.0.163:8081/?action=stream" width="600" height="400" />
+		<img src="http://192.168.0.53:8081/?action=stream" width="600" height="400" />
 	</div>
 	<?php include 'buttons.php' ?>
 </body>

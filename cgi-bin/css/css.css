@@ -138,6 +138,7 @@ body:focus {
   display: inline-block;
   position: relative;
   text-align: center;
+  color: white;
 }
 .tabContent {
   width: 62%;

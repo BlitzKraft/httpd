@@ -77,94 +77,69 @@ D1 (209) - Power Off
 <html>
 	<?php include 'head.php' ?>
 <head>
-	<style type="text/css">
-	div {
-		width: 25%;
-		min-width: 200px;
-		max-width: 300px;
-		height: 200px;
-		min-height: 100px;
-		display: inline-block;
-		border-right: auto;
-		border-left: auto;
-	}
-
-	.btn {
-		width:100%;
-		height: 95%;
-		font-size: 30px;
-		text-align: center;
-		prefix:"https://api.particle.io/v1/devices/53ff69066667574826552567/RSSend/?access_token=50030f940aa6fc92e271ea8025b7d718c32d83ad";
-	}
-	h3 {
-		text-align: center;
-	}
-	body {
-		text-align: center;
-	}
-	</style>
 </head>
 <body>
+	<div class="can tabContent">
 	<h2>RoboSapien Web Remote</h2>
 	<h3>Action List 1</h3>
-	<div><button id="129" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Up</button></div>
-	<div><button id="132" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Down </button></div>
-	<div><button id="133" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm In </button></div>
-	<div><button id="130" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Out </button></div>
-	<div><button id="131" onclick="buttonClick(this.id)" class="button touchbutton">Tilt Body Right</button></div>
-	<div><button id="137" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm Up</button></div>
-	<div><button id="140" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm down </button></div>
-	<div><button id="141" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm In </button></div>
-	<div><button id="138" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm Out </button></div>
-	<div><button id="139" onclick="buttonClick(this.id)" class="button touchbutton">Tilt Body Left </button></div>
-	<div><button id="128" onclick="buttonClick(this.id)" class="button touchbutton">Turn Right</button></div>
-	<div><button id="136" onclick="buttonClick(this.id)" class="button touchbutton">Turn Left</button></div>
-	<div><button id="134" onclick="buttonClick(this.id)" class="button touchbutton">Walk Forward </button></div>
-	<div><button id="135" onclick="buttonClick(this.id)" class="button touchbutton">Walk Backward </button></div>
-	<div><button id="142" onclick="buttonClick(this.id)" class="button touchbutton">Stop </button></div>
+	<button id="129" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Up</button>
+	<button id="132" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Down </button>
+	<button id="133" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm In </button>
+	<button id="130" onclick="buttonClick(this.id)" class="button touchbutton">Right Arm Out </button>
+	<button id="131" onclick="buttonClick(this.id)" class="button touchbutton">Tilt Body Right</button>
+	<button id="137" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm Up</button>
+	<button id="140" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm down </button>
+	<button id="141" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm In </button>
+	<button id="138" onclick="buttonClick(this.id)" class="button touchbutton">Left Arm Out </button>
+	<button id="139" onclick="buttonClick(this.id)" class="button touchbutton">Tilt Body Left </button>
+	<button id="128" onclick="buttonClick(this.id)" class="button touchbutton">Turn Right</button>
+	<button id="136" onclick="buttonClick(this.id)" class="button touchbutton">Turn Left</button>
+	<button id="134" onclick="buttonClick(this.id)" class="button touchbutton">Walk Forward </button>
+	<button id="135" onclick="buttonClick(this.id)" class="button touchbutton">Walk Backward </button>
+	<button id="142" onclick="buttonClick(this.id)" class="button touchbutton">Stop </button>
 	
 
 	<h3>Action List 2</h3>
 
-	<div><button id="161" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Thump</button></div>
-	<div><button id="164" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Pickup</button></div>
-	<div><button id="165" onclick="buttonClick(this.id)" class="button touchbutton">Lean Backward</button></div>
-	<div><button id="162" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Throw </button></div>
-	<div><button id="163" onclick="buttonClick(this.id)" class="button touchbutton">Sleep </button></div>
-	<div><button id="169" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Thump</button></div>
-	<div><button id="172" onclick="buttonClick(this.id)" class="button touchbutton">Lt Hand Pickup</button></div>
-	<div><button id="173" onclick="buttonClick(this.id)" class="button touchbutton">Lean Forward</button></div>
-	<div><button id="170" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Throw</button></div>
-	<div><button id="171" onclick="buttonClick(this.id)" class="button touchbutton">Listen</button></div>
-	<div><button id="160" onclick="buttonClick(this.id)" class="button touchbutton">Right Turn Step</button></div>
-	<div><button id="168" onclick="buttonClick(this.id)" class="button touchbutton">Left Turn Step</button></div>
-	<div><button id="166" onclick="buttonClick(this.id)" class="button touchbutton">Forward Ste<p/button></div>
-	<div><button id="167" onclick="buttonClick(this.id)" class="button touchbutton">Backward Step</button></div>
-	<div><button id="177" onclick="buttonClick(this.id)" class="button touchbutton">Wake Up</button></div>
+	<button id="161" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Thump</button>
+	<button id="164" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Pickup</button>
+	<button id="165" onclick="buttonClick(this.id)" class="button touchbutton">Lean Backward</button>
+	<button id="162" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Throw </button>
+	<button id="163" onclick="buttonClick(this.id)" class="button touchbutton">Sleep </button>
+	<button id="169" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Thump</button>
+	<button id="172" onclick="buttonClick(this.id)" class="button touchbutton">Lt Hand Pickup</button>
+	<button id="173" onclick="buttonClick(this.id)" class="button touchbutton">Lean Forward</button>
+	<button id="170" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Throw</button>
+	<button id="171" onclick="buttonClick(this.id)" class="button touchbutton">Listen</button>
+	<button id="160" onclick="buttonClick(this.id)" class="button touchbutton">Right Turn Step</button>
+	<button id="168" onclick="buttonClick(this.id)" class="button touchbutton">Left Turn Step</button>
+	<button id="166" onclick="buttonClick(this.id)" class="button touchbutton">Forward Ste<p/button>
+	<button id="167" onclick="buttonClick(this.id)" class="button touchbutton">Backward Step</button>
+	<button id="177" onclick="buttonClick(this.id)" class="button touchbutton">Wake Up</button>
 
 	<h3>Action List 3</h3>
 
-	<div><button id="193" onclick="buttonClick(this.id)" class="button touchbutton">Right Hand Sweep</button></div>
-	<div><button id="196" onclick="buttonClick(this.id)" class="button touchbutton">High 5</button></div>
-	<div><button id="197" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 1</button></div>
-	<div><button id="194" onclick="buttonClick(this.id)" class="button touchbutton">Burp</button></div>
-	<div><button id="195" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 2 </button></div>
-	<div><button id="201" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Sweep</button></div>
-	<div><button id="204" onclick="buttonClick(this.id)" class="button touchbutton">Talk Back</button></div>
-	<div><button id="205" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 1</button></div>
-	<div><button id="202" onclick="buttonClick(this.id)" class="button touchbutton">Whistle</button></div>
-	<div><button id="203" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 2</button></div>
-	<div><button id="192" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 3</button></div>
-	<div><button id="200" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 3</button></div>
-	<div><button id="198" onclick="buttonClick(this.id)" class="button touchbutton">Bulldozer</button></div>
-	<div><button id="199" onclick="buttonClick(this.id)" class="button touchbutton">Oops!</button></div>
-	<div><button id="206" onclick="buttonClick(this.id)" class="button touchbutton">Roar</button></div>
-	<div><button id="210" onclick="buttonClick(this.id)" class="button touchbutton">Demo 1</button></div>
-	<div><button id="212" onclick="buttonClick(this.id)" class="button touchbutton">Dance</button></div>
-	<div><button id="211" onclick="buttonClick(this.id)" class="button touchbutton">Demo 2</button></div>
-	<div><button id="208" onclick="buttonClick(this.id)" class="button touchbutton">All Demo</button></div>
-	<div><button id="209" onclick="buttonClick(this.id)" class="button touchbutton">Power Off</button></div>
+	<button id="193" onclick="buttonClick(this.id)" class="button touchbutton">Right Hand Sweep</button>
+	<button id="196" onclick="buttonClick(this.id)" class="button touchbutton">High 5</button>
+	<button id="197" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 1</button>
+	<button id="194" onclick="buttonClick(this.id)" class="button touchbutton">Burp</button>
+	<button id="195" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 2 </button>
+	<button id="201" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Sweep</button>
+	<button id="204" onclick="buttonClick(this.id)" class="button touchbutton">Talk Back</button>
+	<button id="205" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 1</button>
+	<button id="202" onclick="buttonClick(this.id)" class="button touchbutton">Whistle</button>
+	<button id="203" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 2</button>
+	<button id="192" onclick="buttonClick(this.id)" class="button touchbutton">Rt Hand Strike 3</button>
+	<button id="200" onclick="buttonClick(this.id)" class="button touchbutton">Left Hand Strike 3</button>
+	<button id="198" onclick="buttonClick(this.id)" class="button touchbutton">Bulldozer</button>
+	<button id="199" onclick="buttonClick(this.id)" class="button touchbutton">Oops!</button>
+	<button id="206" onclick="buttonClick(this.id)" class="button touchbutton">Roar</button>
+	<button id="210" onclick="buttonClick(this.id)" class="button touchbutton">Demo 1</button>
+	<button id="212" onclick="buttonClick(this.id)" class="button touchbutton">Dance</button>
+	<button id="211" onclick="buttonClick(this.id)" class="button touchbutton">Demo 2</button>
+	<button id="208" onclick="buttonClick(this.id)" class="button touchbutton">All Demo</button>
+	<button id="209" onclick="buttonClick(this.id)" class="button touchbutton">Power Off</button>
 	<?php include 'buttons.php' ?>
-
+	</div>
 </body>
 </html>
