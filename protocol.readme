@@ -1,0 +1,54 @@
+Introduction:
+-------------
+
+There is an onboard Arduino MEGA 2560, connected to a Gigabyte (in premium version), and raspberry pi (economy version).
+
+Anywhere in the following document, any unqualified "arduino" refers to the MEGA that's included.
+
+The gigabyte and raspberry pi shall be referred to as "on board computer" or "computer", everywhere the distinction
+is not necessary. 
+
+The computer currently runs mostly standard ubuntu/debian distribution with some additional packages installed. The
+server is "lighttpd", with modules fastcgi and php5 enabled. 
+
+The php script(s) actually execute the shell commands necessary to connect and control the arduino and its peripherals.
+
+
+Connections:
+-----------
+The pixy is connected to the arduino via SPI. It is also connected to the computer via USB.
+The USB connection is used to to serve the video feed from the pixy to the interface.
+
+All the motors are connected to and driven by the arduino. The pin configuration may change anytime for
+convenience and ease of access. 
+
+That arduino is also connected to the computer via USB.
+
+   Establishing the protocol between Arduino and the onboard computer. 
+
+   When the button is hit on the GUI (served from the Pi/BB/GB ) it sends the ID of the button. 
+   Arduino has triggers to listen to that ID. 
+
+   The following IDs are currently available
+	nav
+	upload*
+	track 
+	arm
+	persona
+	settings*
+	advanced*
+   The ones marked with an asterisk are not applicable to the arduino.
+
+   nav
+   ---
+   This initiates the navigation protocol. The video is transmitted and displayed on the web page, 
+   with google maps like controls overlaid. 
+   
+   track
+   -----
+   The user registers an object using the button on the pixy. When registered, Persona tracks and 
+   follows the specified object.
+
+   arm
+   ---
+   Used only when the robotic arm attachment is available
