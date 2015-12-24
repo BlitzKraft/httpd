@@ -129,8 +129,8 @@ body:focus {
   -moz-appearance: none;
   width: 100px;
   height: 100px;
-  margin: 0 15px 15px 15px;
-  padding: 10px;
+  margin: 15px;
+  padding: 0px;
   background-color: rgba(35, 35, 35, 0.7);
   border-style: solid;
   border-color: #444444;
