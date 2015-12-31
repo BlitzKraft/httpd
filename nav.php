@@ -26,12 +26,10 @@
 		<div class="sidehead">Navigate</div>
 		<div class="navpad">
 		<ul>
-			<li><input type="image" class="arrow uparr" src="img/whtarr.png" />   </li>
-			<li><input type="image" class="arrow lftarr" src="img/whtarr.png" /><input type="image" class="arrow" style="height: 50px; width: 50px; padding: 0 5px 0 5px"  src="img/stop.png" /><input type="image" class="arrow right" src="img/whtarr.png" /></li>
-			<li><input type="image" class="arrow downarr" src="img/whtarr.png" /> </li>
-			<li></li>
+			<li><input type="image" value="for" class="arrow uparr" src="img/whtarr.png" />   </li>
+			<li><input type="image" value="lft" class="arrow lftarr" src="img/whtarr.png" /><input type="image" value="stp" class="arrow" style="height: 50px; width: 50px; padding: 0 5px 0 5px"  src="img/stop.png" /><input type="image" value="rgt" class="arrow right" src="img/whtarr.png" /></li>
+			<li><input type="image" value="bak" class="arrow downarr" src="img/whtarr.png" /> </li>
 		</ul>
-			<form action="script.php" method="get"><input type="submit" value="something" /></form>
 		</div>
 	</div>
 	</div>
