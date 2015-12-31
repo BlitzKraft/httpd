@@ -5,10 +5,11 @@
 	<script language="javascript" type="text/javascript">
 	$(document).ready(function() {
 		$('.arrow').click(function() {
+			var dir=$(this).val();
 			$.ajax({
 				url: 'ajax.php',
-				data: {action: 'test'},
-				type: post,
+				data: {'action': dir},
+				type: 'post',
 				success: function(output) {
 					alert(output);
 				}
