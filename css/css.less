@@ -203,6 +203,41 @@ body:focus {
 	vertical-align: center;
 }
 
+.cmd {
+	background: #000;
+	color: white;
+	font-size: 24pt;
+	min-height: 500px;
+	max-height: 80%;
+}
+
+.question {
+	color: white;
+	display: block;
+}
+
+.answer {
+	color: cyan;
+	text-align: right;
+	display: block;
+	padding: 0 150px 0 auto;
+	margin: 0 150px 0 auto;
+}
+
+.answer::after {
+	background:url("../img/persona_bw.jpg");
+	position: absolute;
+	display: inline;
+	position: relative;
+	z-index: 100;
+	margin: 0;
+	padding: 10px 10px 10px -150px;
+	width: 100px;
+	height: 100px;
+	content: '';
+	text-align: right;
+}
+
 #tabs {
 	
 }
@@ -328,19 +363,25 @@ input[type=range]::-moz-range-thumb {
 	text-align: center;
 }
 .navpad .arrow {
-	height: 50px;
-	width: 70px;
 }
 
 .rgtarr {
 	transform: rotate(0deg);
+	height: 50px;
+	width: 70px;
 }
 .downarr {
 	transform: rotate(90deg);
+	height: 50px;
+	width: 70px;
 }
 .lftarr {
 	transform: rotate(180deg);
+	height: 50px;
+	width: 70px;
 }
 .uparr {
 	transform: rotate(270deg);
+	height: 50px;
+	width: 70px;
 }
