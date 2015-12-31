@@ -14,7 +14,7 @@ case $count in
 		echo "Arduino detected at $ARDUINO"
 		;;
 	*)
-		echo "More than one serial devices connected. Set ARDUINO manually"
+		echo "More than one serial devices found. Set ARDUINO manually"
 		exit 1
 		;;
 esac
@@ -35,6 +35,9 @@ case $dir in
 		;;
 	"rgt")
 		echo d > $ARDUINO
+		;;
+	"stp")
+		echo x > $ARDUINO
 		;;
 	*)
 		echo "Error. Accepted commands are for, bak, lft, rgt."
