@@ -9,6 +9,23 @@ case $(ls /dev | grep ACM | wc -l) in
 	"1")
 		echo "Found exactly one Arduino. Good"
 		ARDUINO="/dev/$(ls /dev | grep ACM)"
+		#Check for minicom
+		if [ -n "$(pidof minicom)" ]; then 
+			echo "Killing minicom"
+			sudo pkill minicom
+			echo "Starting minicom"
+			minicom -D $ARDUINO -b 9600 -o &
+		else
+			echo "Starting minicom"
+			minicom -D $ARDUINO -b 9600 -o &
+		fi
+
+		#Check for /dev/ttyACM permissions
+		if [ "$(ls -l $ARDUINO | cut -d ' ' -f 3)" != "www-data" ]; then
+			echo "Arduino not owned by server. Fixing.."
+			sudo chown www-data:dialout $ARDUINO
+			echo "Fixed."
+		fi
 		;;
 	"*")
 		echo "Something is *seriously* wrong."
@@ -16,28 +33,12 @@ case $(ls /dev | grep ACM | wc -l) in
 		;;
 esac
 
-#Check for minicom
-if [ -n "$(pidof minicom)" ]; then 
-	echo "Killing minicom"
-	sudo pkill minicom
-	echo "Starting minicom"
-	minicom -D $ARDUINO -b 9600 -o &
-else
-	echo "Starting minicom"
-	minicom -D $ARDUINO -b 9600 -o &
-fi
-
-#Check for /dev/ttyACM permissions
-if [ "$(ls -l $ARDUINO | cut -d ' ' -f 3)" != "www-data" ]; then
-	echo "Arduino not owned by server. Fixing.."
-	sudo chown www-data:dialout $ARDUINO
-	echo "Fixed."
-fi
-
 #Check lighttpd is running
 if [ -z "$(pidof lighttpd)" ]; then
 	echo "Lighttpd is not running."
 	echo "Starting lighttpd."
 	sudo lighttpd -f /etc/lighttpd/lighttpd.conf
+else
+	echo "lighttpd is running. Nothing to do."
 fi
 
