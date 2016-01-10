@@ -214,28 +214,27 @@ body:focus {
 .question {
 	color: white;
 	display: block;
+	margin: 20px;
 }
 
 .answer {
+	background: #A0A0A0;
 	color: cyan;
 	text-align: right;
 	display: block;
-	padding: 0 150px 0 auto;
-	margin: 0 150px 0 auto;
+	padding: 10px;
+	margin: 20px;
+	border-radius: 5px;
 }
 
 .answer::after {
-	background:url("../img/persona_bw.jpg");
-	position: absolute;
-	display: inline;
-	position: relative;
-	z-index: 100;
-	margin: 0;
-	padding: 10px 10px 10px -150px;
 	width: 100px;
 	height: 100px;
-	content: '';
-	text-align: right;
+	content: "";
+	display: inline-block;
+	position: relative;
+	margin: 5px -2px 0 5px;
+	background:url("../img/persona_bw.jpg") no-repeat;
 }
 
 #tabs {
